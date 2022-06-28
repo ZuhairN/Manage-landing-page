@@ -1,0 +1,14 @@
+@use '../utils' as *;
+
+body {
+    background-color: $clr-v-pale-red;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

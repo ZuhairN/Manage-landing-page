@@ -1,0 +1,25 @@
+@mixin flex($justify: center, $align: center, $gap: 1.6rem) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin container($inline, $block) {
+    padding-inline: $inline;
+    padding-block: $block;
+}
+
+@mixin breakpoint($size) {
+    @if $size ==mobile {
+        @media(max-width: 60em) {
+            @content;
+        }
+    }
+
+    @else if $size ==desktop {
+        @media(min-width: 61em) {
+            @content;
+        }
+    }
+}
