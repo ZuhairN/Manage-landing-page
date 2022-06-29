@@ -1,7 +1,7 @@
 import logo from '../../images/logo.svg';
 import menu from '../../images/icon-hamburger.svg';
 
-function Header() {
+export default function Header() {
   return (
     <header className='Header'>
       <nav className='Header__nav'>
@@ -19,5 +19,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

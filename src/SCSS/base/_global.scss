@@ -1,7 +1,10 @@
 @use '../utils' as *;
 
-body {
+.App {
+    @include flex($justify: space-between, $align: stretch);
+    flex-direction: column;
     background-color: $clr-v-pale-red;
+    min-height: 100vh;
 }
 
 img {
@@ -11,4 +14,8 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+
+    &:hover {
+        color: $clr-bright-red
+    }
 }
