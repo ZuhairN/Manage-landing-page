@@ -4,7 +4,7 @@ export default function Footer() {
         <footer className='Footer'>
             <form className='Footer__form'>
                 <input className='Footer__email' type='email' placeholder='Updates in your inbox...' />
-                <button className='btn'>Go</button>
+                <button className='Btn'>GO</button>
             </form>
             <nav className='Footer__nav'>
                 <ul className='Footer__list'>
@@ -21,11 +21,11 @@ export default function Footer() {
             </nav>
             <div className='Footer__media'>
                 <div className='Footer__social'>
-                    <a href="./"><i class="fa-brands fa-facebook-square fa-2xl"></i></a>
-                    <a href="./"><i class="fa-brands fa-youtube fa-2xl"></i></a>
-                    <a href="./"><i class="fa-brands fa-twitter fa-2xl"></i></a>
-                    <a href="./"><i class="fa-brands fa-pinterest fa-2xl"></i></a>
-                    <a href="./"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a href="./"><i className="fa-brands fa-facebook-square fa-2xl"></i></a>
+                    <a href="./"><i className="fa-brands fa-youtube fa-2xl"></i></a>
+                    <a href="./"><i className="fa-brands fa-twitter fa-2xl"></i></a>
+                    <a href="./"><i className="fa-brands fa-pinterest fa-2xl"></i></a>
+                    <a href="./"><i className="fa-brands fa-instagram fa-2xl"></i></a>
                 </div>
                 <img className='Footer__logo' src={logo} alt='logo' />
             </div>

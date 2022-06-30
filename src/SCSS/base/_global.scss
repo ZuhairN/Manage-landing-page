@@ -3,7 +3,10 @@
 .App {
     @include flex($justify: space-between, $align: stretch);
     flex-direction: column;
-    background-color: $clr-v-pale-red;
+    background-color: $clr-vl-gray;
+    background-image: url(../../images/bg-tablet-pattern.svg);
+    // background-position: -500%;
+    background-size: contain;
     min-height: 100vh;
 }
 
@@ -15,7 +18,7 @@ a {
     text-decoration: none;
     color: inherit;
 
-    &:hover {
+    &:not([class^='Btn']):hover {
         color: $clr-bright-red
     }
 }

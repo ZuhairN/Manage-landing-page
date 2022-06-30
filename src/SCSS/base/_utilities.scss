@@ -1,0 +1,6 @@
+@use '../utils' as *;
+
+%intro {
+    @include flex($direct: column);
+    padding-inline: 1.6rem;
+}

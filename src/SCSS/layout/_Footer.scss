@@ -22,15 +22,23 @@
 
     &__form {
         @include flex();
+
+        >* {
+            font-family: inherit;
+        }
     }
 
     &__email {
         flex: 1;
         padding: 1.6rem 2.8rem;
-        font: inherit;
         border: none;
         outline: none;
         border-radius: 100vw;
+    }
+
+    .Btn {
+        border: none;
+        cursor: pointer;
     }
 
     &__nav {

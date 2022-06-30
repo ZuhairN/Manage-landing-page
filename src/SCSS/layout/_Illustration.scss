@@ -1,0 +1,25 @@
+@use '../utils' as *;
+@use '../base' as *;
+
+
+.Illustration {
+    @include flex();
+    @include container();
+
+    @include breakpoint(mobile) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    &__intro {
+        @extend %intro;
+
+        @include breakpoint(mobile) {
+            gap: .5rem;
+        }
+    }
+
+    &__content {
+        @include flex($direct: column, $gap: 2.4rem);
+    }
+}

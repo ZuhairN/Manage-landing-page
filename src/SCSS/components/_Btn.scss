@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+.Btn {
+    border-radius: 100vw;
+    color: $clr-vl-gray;
+    background-color: $clr-bright-red;
+    padding: 1.6rem 3.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    &:hover {
+        background-color: lighten($clr-bright-red, 15%)
+    }
+
+    &--white {
+        @extend .Btn;
+        color: $clr-bright-red;
+        background-color: $clr-vl-gray;
+
+        &:hover {
+            background-color: $clr-vl-gray;
+            color: lighten($clr-bright-red, 20%);
+        }
+    }
+}

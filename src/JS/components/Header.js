@@ -14,7 +14,7 @@ export default function Header() {
           <li><a href='./'>Careers</a></li>
           <li><a href='./'>Community</a></li>
         </ul>
-        <a className='btn' href='./'>Get Started</a>
+        <a className='Btn' href='./'>Get Started</a>
       </nav>
     </header>
   );

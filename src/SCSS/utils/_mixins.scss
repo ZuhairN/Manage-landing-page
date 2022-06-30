@@ -6,8 +6,8 @@
     gap: $gap;
 }
 
-@mixin container($inline, $block) {
-    padding-inline: $inline;
+@mixin container($block: 0) {
+    padding-inline: 3.2rem;
     padding-block: $block;
 }
 
