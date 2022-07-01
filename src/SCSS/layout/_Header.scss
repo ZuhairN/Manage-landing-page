@@ -18,6 +18,12 @@
 
         @include breakpoint(mobile) {
             display: block;
+            position: fixed;
+            top: 3.2rem;
+            right: 1.6rem;
+            padding: 1.6rem;
+            background-color: $clr-v-pale-red;
+            border-radius: 5vw;
             cursor: pointer;
         }
     }
@@ -38,12 +44,6 @@
             border-radius: 5px;
             background-color: $clr-vl-gray;
             transform: translateX(110%);
-        }
-    }
-
-    .Btn {
-        @include breakpoint(mobile) {
-            display: none;
         }
     }
 }

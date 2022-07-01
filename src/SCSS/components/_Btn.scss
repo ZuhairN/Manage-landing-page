@@ -8,6 +8,12 @@
     font-size: 1.2rem;
     font-weight: 700;
 
+    .Header & {
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
     &:hover {
         background-color: lighten($clr-bright-red, 15%)
     }

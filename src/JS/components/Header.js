@@ -6,7 +6,7 @@ export default function Header() {
     <header className='Header'>
       <nav className='Header__nav'>
         <img className='Header__logo' src={logo} alt='logo' />
-        <img className='Header__menu' src={menu} alt='menu-logo' />
+        <div className='Header__menu'><img src={menu} alt='menu-logo' /></div>
         <ul className='Header__list'>
           <li><a href='./'>Pricing</a></li>
           <li><a href='./'>Product</a></li>

@@ -2,5 +2,9 @@
 
 %intro {
     @include flex($direct: column);
-    padding-inline: 1.6rem;
+
+    @include breakpoint(mobile) {
+        padding-inline: 1.6rem;
+        text-align: center;
+    }
 }

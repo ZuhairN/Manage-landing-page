@@ -1,0 +1,39 @@
+@use '../utils' as *;
+@use '../base' as *;
+
+.Manage {
+    @include flex();
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        gap: 6.4rem;
+        margin-block: 10rem;
+    }
+
+    &__intro {
+        @extend %intro;
+        @include container();
+    }
+
+    .heading--3 {
+        @include breakpoint(mobile) {
+            min-width: max-content;
+            background-color: $clr-v-pale-red;
+            border-radius: 100vw 0 0 100vw;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__num {
+        color: $clr-vl-gray;
+        background-color: $clr-bright-red;
+        border-radius: 100vw;
+        padding: .77rem 2rem;
+        margin-right: 1.6rem;
+    }
+
+    &__features {
+        @include flex($direct: column, $gap: 4rem);
+        padding-left: 1.6rem;
+    }
+}
