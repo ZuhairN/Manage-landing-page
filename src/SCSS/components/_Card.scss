@@ -1,0 +1,19 @@
+@use '../utils' as *;
+
+.Card {
+    @include flex($direct: column);
+    position: relative;
+    margin-inline: 1.6rem;
+    margin-bottom: 3.2rem;
+    padding: 6.4rem 2.4rem 4rem;
+    background-color: $clr-vl-gray ;
+    text-align: center;
+
+    &__avatar {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8rem;
+    }
+}
