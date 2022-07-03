@@ -1,0 +1,15 @@
+@use '../utils' as *;
+
+.Reviews {
+    @include flex();
+
+    .heading--2 {
+        margin-bottom: 8.8rem;
+    }
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+
+    margin-bottom: 6.4rem;
+}

@@ -22,13 +22,14 @@
             top: 3.2rem;
             right: 1.6rem;
             padding: 1.6rem;
+            width: 5.7rem;
+            height: 5rem;
             background-color: $clr-v-pale-red;
-            border-radius: 5vw;
+            border-radius: 1em;
             cursor: pointer;
             z-index: 100;
         }
     }
-
 
     &__list {
         @include flex($gap: 3.2rem);
@@ -45,6 +46,39 @@
             border-radius: 5px;
             background-color: $clr-vl-gray;
             transform: translateX(110%);
+            transition: all 0ms ease-in-out;
+        }
+
+        &.active {
+            @include breakpoint(mobile) {
+                transform: translate(0);
+                transition: all 250ms ease-out;
+                z-index: 100;
+            }
+        }
+
+    }
+
+    &__lightbox {
+        @include breakpoint(mobile) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            height: 100vh;
+            transition: opacity 400ms ease-out;
+            background: linear-gradient(27deg,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0) 90%);
+
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+                width: 100%;
+                position: fixed;
+                z-index: 50;
+            }
         }
     }
 }

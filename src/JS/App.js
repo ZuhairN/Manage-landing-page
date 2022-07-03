@@ -2,7 +2,7 @@ import '../SCSS/App.scss';
 import Header from './components/Header';
 import Illustraion from './components/Illustraion';
 import Manage from './components/Manage';
-import Card from './components/Card';
+import Reviews from './components/Reviews';
 import Simplify from './components/Simplify';
 import Footer from './components/Footer';
 
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Illustraion />
       <Manage />
-      <Card />
+      <Reviews />
       <Simplify />
       <Footer />
     </div>
