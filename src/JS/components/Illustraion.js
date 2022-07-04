@@ -15,7 +15,7 @@ export default function Illustraion() {
                 </div>
                 <Btn text='Get Started' />
             </div>
-            <img className='Illustraion__img' src={illustration} alt='illustraion' />
+            <div><img className='Illustraion__img' src={illustration} alt='illustraion' /></div>
         </div>
     )
 }

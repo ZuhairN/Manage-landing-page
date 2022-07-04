@@ -3,11 +3,17 @@
 
 
 .Illustration {
+    @extend .container;
     @include flex();
     @include container();
 
     @include breakpoint(mobile) {
         flex-direction: column-reverse;
+    }
+
+    @include breakpoint(desktop) {
+        justify-content: space-between;
+        margin-top: 7rem;
     }
 
     &__intro {
@@ -20,5 +26,10 @@
 
     &__content {
         @include flex($direct: column, $gap: 2.4rem);
+
+        @include breakpoint(desktop) {
+            align-items: flex-start;
+            gap: 4rem;
+        }
     }
 }

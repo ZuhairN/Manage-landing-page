@@ -1,20 +1,41 @@
 @use '../utils' as *;
 
 .Simplify {
-    @include flex($gap: 2.4rem);
     background-color: $clr-bright-red ;
     background-repeat: no-repeat;
-    padding: 9rem 3.2rem;
+    padding-block: 6rem;
+
+    .container {
+        @include flex($justify: space-between, $gap: 2.4rem);
+
+        @include breakpoint(mobile) {
+            flex-direction: column;
+
+            >* {
+                max-width: 30rem;
+            }
+        }
+
+        @include breakpoint(desktop) {
+            >* {
+                max-width: 60rem;
+            }
+        }
+    }
 
     @include breakpoint(mobile) {
-        flex-direction: column;
         background-image: url(../../images/bg-simplify-section-mobile.svg);
         background-position: left top 70%;
         text-align: center;
+
+    }
+
+    @include breakpoint(desktop) {
+        background-image: url(../../images/bg-simplify-section-desktop.svg);
+        background-position: right -15vw top 100%;
     }
 
     .heading--1 {
         color: $clr-vl-gray;
-        max-width: 30rem;
     }
 }

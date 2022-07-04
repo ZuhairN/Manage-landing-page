@@ -1,30 +1,50 @@
 @use '../utils' as *;
 
 .Footer {
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    justify-items: center;
-    gap: 5.6rem;
-    padding: 4.8rem 2.4rem 3.2rem;
-    margin-top: auto;
-    background-color: $clr-vd-blue;
     color: $clr-vl-gray;
+    background-color: $clr-vd-blue;
+    margin-top: auto;
+    padding-block: 4.8rem;
 
-    @include breakpoint(mobile) {
-        flex-direction: column;
-        font-size: 1.4rem;
+    .container {
+        display: grid;
+        grid-template-rows: repeat(4, auto);
+        justify-items: center;
+        gap: 5.6rem;
 
-        >* {
-            width: 100%;
-            max-width: 35rem;
+        @include breakpoint(mobile) {
+            flex-direction: column;
+            font-size: 1.4rem;
+
+            >* {
+                width: 100%;
+                max-width: 40rem;
+            }
+        }
+
+        @include breakpoint(desktop) {
+            padding-block: 3.2rem;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: auto 1fr 1fr auto;
+            grid-template-areas:
+                'media list list form'
+                'media list list copyright';
+            justify-content: space-between;
         }
     }
 
+
     &__form {
         @include flex();
+        position: relative;
 
         >* {
             font-family: inherit;
+        }
+
+        @include breakpoint(desktop) {
+            grid-area: form;
+            align-self: flex-start;
         }
     }
 
@@ -34,6 +54,41 @@
         border: none;
         outline: none;
         border-radius: 100vw;
+        outline: 2px solid transparent;
+    }
+
+    &__form.invalid &__email {
+        outline-color: $clr-bright-red;
+
+        &::placeholder {
+            color: $clr-bright-red;
+            opacity: 1;
+        }
+    }
+
+    &__form.valid &__email {
+        outline-color: $clr-valid;
+    }
+
+    &__error {
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+        transform: translateY(160%);
+        font-size: 1.1rem;
+        font-style: italic;
+        color: $clr-bright-red;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+    }
+
+    &__form.invalid &__error {
+        opacity: 1;
+    }
+
+    &__form.valid &__error {
+        color: $clr-valid;
+        opacity: 1;
     }
 
     .Btn {
@@ -41,29 +96,65 @@
         cursor: pointer;
     }
 
+
     &__nav {
         padding-inline: 3.2rem 2.4rem;
         @include flex($justify: space-between, $align: stretch);
+
+        @include breakpoint(desktop) {
+            grid-area: list;
+            place-self: stretch;
+            padding-inline: 0;
+        }
     }
 
     &__list {
         @include flex($direct: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
+
+        @include breakpoint(desktop) {
+            gap: 3.2rem;
+            width: 100%;
+            align-items: center;
+
+            >* {
+                width: 11rem;
+            }
+        }
     }
 
     &__media {
         @include flex($direct: column, $gap: 5.6rem);
         padding-inline: 1.6rem;
+
+        @include breakpoint(desktop) {
+            grid-area: media;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-inline: 0;
+        }
     }
 
     &__social {
         font-size: 1.6rem;
         @include flex($justify: space-between);
         width: 100%;
+
+        @include breakpoint(desktop) {
+            gap: 1.2rem;
+            height: 20px;
+            font-size: 1.2rem;
+        }
     }
 
     &__copyright {
         font-size: 1.2rem;
         opacity: .5;
         text-align: center;
+
+        @include breakpoint(desktop) {
+            grid-area: copyright;
+            place-self: flex-end;
+        }
     }
 }

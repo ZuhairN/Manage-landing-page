@@ -13,13 +13,13 @@
 
 @mixin breakpoint($size) {
     @if $size ==mobile {
-        @media(max-width: 60em) {
+        @media(max-width: 54.999em) {
             @content;
         }
     }
 
     @else if $size ==desktop {
-        @media(min-width: 61em) {
+        @media(min-width: 55em) {
             @content;
         }
     }

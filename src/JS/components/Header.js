@@ -2,6 +2,7 @@ import { useState } from 'react';
 import logo from '../../images/logo.svg';
 import menuOpen from '../../images/icon-hamburger.svg';
 import menuClose from '../../images/icon-close.svg';
+import Btn from './Btn';
 
 export default function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -20,8 +21,8 @@ export default function Header() {
           <li><a href='./'>Careers</a></li>
           <li><a href='./'>Community</a></li>
         </ul>
+        <Btn text='Get Started' />
         <div className={isNavExpanded ? 'Header__lightbox active' : 'Header__lightbox'}></div>
-        <a className='Btn' href='./'>Get Started</a>
       </nav>
     </header>
   );

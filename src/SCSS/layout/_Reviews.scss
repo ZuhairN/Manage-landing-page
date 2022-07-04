@@ -1,15 +1,30 @@
 @use '../utils' as *;
 
 .Reviews {
-    @include flex();
+    @include flex($direct: column);
+    margin-bottom: 6.4rem;
 
     .heading--2 {
         margin-bottom: 8.8rem;
     }
 
-    @include breakpoint(mobile) {
-        flex-direction: column;
+    .Btn {
+        margin-top: 3.2rem;
     }
 
-    margin-bottom: 6.4rem;
+    &__container {
+        @include flex();
+    }
+
+    &__form {
+
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+
+    input {
+        accent-color: $clr-bright-red;
+        cursor: pointer;
+    }
 }

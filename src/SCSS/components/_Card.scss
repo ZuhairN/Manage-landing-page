@@ -10,7 +10,8 @@
     text-align: center;
 
     @include breakpoint(mobile) {
-        // display: none;
+        display: none;
+
 
         &.active {
             display: block;
