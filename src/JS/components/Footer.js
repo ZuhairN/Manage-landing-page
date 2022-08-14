@@ -1,40 +1,42 @@
+/* eslint-disable no-useless-escape */
+import { useState } from 'react';
 import logo from '../../images/footer_logo.svg';
+import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter } from 'react-icons/fa';
+import { SiYoutubemusic } from 'react-icons/si';
+
+
+const regex =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 export default function Footer() {
+    const [input, setInput] = useState('');
+    const [validity, setValidity] = useState({ valid: true, accept: false });
+    const handleChange = (e) => setInput(e.target.value);
 
-    function errorHandler(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const regex =
-            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const error = document.querySelector('.Footer__error');
-        const email = e.target.email;
-        const form = e.target;
-        if (email.value === '' || !regex.test(email.value)) {
-            email.value = '';
-            email.setAttribute('placeholder', 'johnmadden/mail');
-            form.classList.add('invalid');
-            error.textContent = "Please insert a valid email";
+        if (input === '' || !regex.test(input)) {
+            setValidity(st => ({ ...st, valid: false }));
         } else {
-            email.setAttribute('placeholder', 'Updates in your inbox...');
-            form.classList.remove('invalid');
-
             setTimeout(() => {
-                form.classList.add('valid');
-                error.textContent = 'Yippee, thanks for subscribing!';
+                setInput('');
+                setValidity({ valid: true, accept: true });
                 setTimeout(() => {
-                    form.classList.remove('valid');
-                }, 5000);
-            }, 300);
-            email.value = '';
+                    setValidity(st => ({ ...st, accept: false }))
+                }, 5000)
+            }, 300)
         }
-    };
+    }
+    const placeholder = validity.valid ? 'Updates in your inbox...' : 'johnmadden/mail';
+    const error = validity.valid ? 'Yippee, thanks for subscribing!' : 'Please insert a valid email';
 
     return (
         <footer className='Footer'>
             <div className='container'>
-                <form className='Footer__form' noValidate onSubmit={errorHandler}>
-                    <input className='Footer__email' type='email' name='email' placeholder='Updates in your inbox...' />
+                <form className={`Footer__form ${validity.valid ? '' : 'invalid'}${validity.accept ? 'valid' : ''}`} onSubmit={handleSubmit} noValidate>
+                    <input className='Footer__email' type='email' name='email' value={input} onChange={handleChange} placeholder={placeholder} />
                     <button className='Btn'>GO</button>
-                    <p className='Footer__error'></p>
+                    <p className='Footer__error'>{error}</p>
                 </form>
                 <nav className='Footer__nav'>
                     <ul className='Footer__list'>
@@ -51,11 +53,11 @@ export default function Footer() {
                 </nav>
                 <div className='Footer__media'>
                     <div className='Footer__social'>
-                        <a href="./"><i className="fa-brands fa-facebook-square fa-2xl"></i></a>
-                        <a href="./"><i className="fa-brands fa-youtube fa-2xl"></i></a>
-                        <a href="./"><i className="fa-brands fa-twitter fa-2xl"></i></a>
-                        <a href="./"><i className="fa-brands fa-pinterest fa-2xl"></i></a>
-                        <a href="./"><i className="fa-brands fa-instagram fa-2xl"></i></a>
+                        <a href="./"><FaFacebookSquare /></a>
+                        <a href="./"><SiYoutubemusic /></a>
+                        <a href="./"><FaTwitter /></a>
+                        <a href="./"><FaPinterest /></a>
+                        <a href="./"><FaInstagram /></a>
                     </div>
                     <img className='Footer__logo' src={logo} alt='logo' />
                 </div>

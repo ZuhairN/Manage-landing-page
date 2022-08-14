@@ -1,8 +1,6 @@
-export default function Btn(props) {
-    const { text, isWhite } = props;
-    const btn = isWhite ? 'Btn--white' : 'Btn';
+export default function Btn({ text, isWhite }) {
     return (
-        <a className={btn} href='./'>
+        <a className={isWhite ? 'Btn--white' : 'Btn'} href='./#'>
             {text}
         </a>
     )
