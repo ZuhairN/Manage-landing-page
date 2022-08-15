@@ -5,3 +5,4 @@ export default function Btn({ text, isWhite }) {
         </a>
     )
 }
+

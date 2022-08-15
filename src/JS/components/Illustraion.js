@@ -1,5 +1,6 @@
-import illustration from '../../images/illustration-intro.svg';
 import Btn from './Btn';
+import illustration from '../../images/illustration-intro.svg';
+
 export default function Illustraion() {
     return (
         <div className="Illustration">

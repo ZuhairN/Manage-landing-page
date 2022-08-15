@@ -21,6 +21,11 @@
             background-size: min(65vw, 80rem);
         }
     }
+
+    *:focus {
+        outline: 2px solid $clr-dg-blue;
+        outline-offset: 5px;
+    }
 }
 
 img {

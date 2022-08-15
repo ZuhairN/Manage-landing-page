@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import useToggle from '../useToggle';
+import Btn from './Btn';
 import logo from '../../images/logo.svg';
 import menuOpen from '../../images/icon-hamburger.svg';
 import menuClose from '../../images/icon-close.svg';
-import Btn from './Btn';
 
 export default function Header() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
-  function toggle() {
-    setIsNavExpanded(st => !st);
-  }
+  const [isNavExpanded, toggleIsNavExpanded] = useToggle(false);
+  const active = isNavExpanded ? 'active' : '';
+  const imgSrc = isNavExpanded ? menuClose : menuOpen;
+
   return (
     <header className='Header'>
       <nav className='Header__nav'>
         <img className='Header__logo' src={logo} alt='logo' />
-        <img className='Header__menu' onClick={toggle} src={isNavExpanded ? menuClose : menuOpen} alt='menu-logo' />
-        <ul className={`Header__list ${isNavExpanded ? 'active' : ''}`}>
+        <img className='Header__menu' onClick={toggleIsNavExpanded} src={imgSrc} alt='menu-logo' />
+        <ul className={`Header__list ${active}`}>
           <li><a href='./'>Pricing</a></li>
           <li><a href='./'>Product</a></li>
           <li><a href='./'>About Us</a></li>
@@ -22,8 +22,8 @@ export default function Header() {
           <li><a href='./'>Community</a></li>
         </ul>
         <Btn text='Get Started' />
-        <div className={`Header__lightbox ${isNavExpanded ? 'active' : ''}`}></div>
+        <div className={`Header__lightbox ${active}`}></div>
       </nav>
     </header>
-  );
+  )
 }

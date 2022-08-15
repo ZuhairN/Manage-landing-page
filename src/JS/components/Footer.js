@@ -4,15 +4,15 @@ import logo from '../../images/footer_logo.svg';
 import { FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter } from 'react-icons/fa';
 import { SiYoutubemusic } from 'react-icons/si';
 
-
-const regex =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export default function Footer() {
     const [input, setInput] = useState('');
     const [validity, setValidity] = useState({ valid: true, accept: false });
-    const handleChange = (e) => setInput(e.target.value);
+    const placeholder = validity.valid ? 'Updates in your inbox...' : 'johnmadden/mail';
+    const error = validity.valid ? 'Yippee, thanks for subscribing!' : 'Please insert a valid email';
 
+    const handleChange = (e) => setInput(e.target.value);
     const handleSubmit = (e) => {
         e.preventDefault();
         if (input === '' || !regex.test(input)) {
@@ -27,8 +27,6 @@ export default function Footer() {
             }, 300)
         }
     }
-    const placeholder = validity.valid ? 'Updates in your inbox...' : 'johnmadden/mail';
-    const error = validity.valid ? 'Yippee, thanks for subscribing!' : 'Please insert a valid email';
 
     return (
         <footer className='Footer'>

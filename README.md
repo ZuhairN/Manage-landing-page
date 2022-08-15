@@ -43,4 +43,5 @@ Users should be able to:
 
 ### Continued development
 
-- ReactJS
+- React.js
+- Next.js

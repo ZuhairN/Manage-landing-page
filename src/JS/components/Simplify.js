@@ -1,4 +1,5 @@
 import Btn from './Btn';
+
 export default function Simplify() {
     return (
         <div className='Simplify'>
