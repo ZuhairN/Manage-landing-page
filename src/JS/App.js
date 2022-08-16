@@ -4,7 +4,6 @@ import Manage from './components/Manage';
 import Reviews from './components/Reviews';
 import Simplify from './components/Simplify';
 import Footer from './components/Footer';
-import '../SCSS/App.scss';
 
 export default function App() {
   return (
