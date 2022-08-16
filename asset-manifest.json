@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Manage-landing-page/static/css/main.a11ff5a2.css",
+    "main.js": "/Manage-landing-page/static/js/main.c1858177.js",
+    "static/media/avatar-ali.png": "/Manage-landing-page/static/media/avatar-ali.88f9155cb730934f4d7c.png",
+    "static/media/avatar-shanai.png": "/Manage-landing-page/static/media/avatar-shanai.4bbe2f95e8975736fbd8.png",
+    "static/media/illustration-intro.svg": "/Manage-landing-page/static/media/illustration-intro.cb9a8a9551ca99f99a125230d38a2c36.svg",
+    "static/media/avatar-anisha.png": "/Manage-landing-page/static/media/avatar-anisha.484e15bc92ce6a0106ab.png",
+    "static/media/avatar-richard.png": "/Manage-landing-page/static/media/avatar-richard.ace8e0892f67a50c1e9e.png",
+    "static/media/footer_logo.svg": "/Manage-landing-page/static/media/footer_logo.67776be511ede9bd23042329ca4d6d8b.svg",
+    "static/media/logo.svg": "/Manage-landing-page/static/media/logo.66a576108be35c08eb2ca3e40c17d151.svg",
+    "index.html": "/Manage-landing-page/index.html",
+    "static/media/bg-simplify-section-desktop.svg": "/Manage-landing-page/static/media/bg-simplify-section-desktop.ca40c1eebd150b1cc7dc.svg",
+    "static/media/icon-close.svg": "/Manage-landing-page/static/media/icon-close.d5ba0dc53461cfc81979638f3b9fcf2e.svg",
+    "static/media/bg-simplify-section-mobile.svg": "/Manage-landing-page/static/media/bg-simplify-section-mobile.a79c8471fa284189552d.svg",
+    "static/media/bg-tablet-pattern.svg": "/Manage-landing-page/static/media/bg-tablet-pattern.b6990a984c7bcc142d3e.svg",
+    "static/media/icon-hamburger.svg": "/Manage-landing-page/static/media/icon-hamburger.8dcf47cc6f3180ad040f1173f3592504.svg",
+    "main.a11ff5a2.css.map": "/Manage-landing-page/static/css/main.a11ff5a2.css.map",
+    "main.c1858177.js.map": "/Manage-landing-page/static/js/main.c1858177.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a11ff5a2.css",
+    "static/js/main.c1858177.js"
+  ]
+}
